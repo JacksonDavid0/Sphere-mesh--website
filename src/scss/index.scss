@@ -1,5 +1,6 @@
 @use "./variable" as *;
 @use "./login/login";
+@use "./not-found//not-found.scss";
 @use "./component/component.scss";
 * {
   margin: 0;

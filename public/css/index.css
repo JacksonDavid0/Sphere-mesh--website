@@ -193,6 +193,116 @@
     width: 30px;
   }
 }
+.not-found-page-container {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 120px);
+  background-color: #343d46;
+  font-family: "Inter", sans-serif;
+  color: #e0e0e0;
+  text-align: center;
+  padding: 80px 20px;
+  box-sizing: border-box;
+}
+
+.not-found-page-title {
+  font-size: 10rem;
+  font-weight: bold;
+  color: #61dafb;
+  margin-bottom: 20px;
+  text-shadow: 0 0 15px rgba(97, 218, 251, 0.5);
+}
+
+.not-found-page-message {
+  font-size: 1.6rem;
+  color: #f0f0f0;
+  margin-bottom: 40px;
+  max-width: 600px;
+  line-height: 1.5;
+}
+
+.not-found-page-home-link {
+  background-color: #61dafb;
+  color: #282c34;
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.not-found-page-home-link:hover {
+  background-color: #4fa3d1;
+  transform: translateY(-2px);
+}
+.not-found-page-home-link:active {
+  transform: translateY(0);
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .not-found-page-container {
+    padding: 50px 20px;
+  }
+  .not-found-page-title {
+    font-size: 8rem;
+  }
+  .not-found-page-message {
+    font-size: 1.4rem;
+  }
+  .not-found-page-home-link {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .not-found-page-container {
+    padding: 40px 15px;
+  }
+  .not-found-page-title {
+    font-size: 6rem;
+  }
+  .not-found-page-message {
+    font-size: 1.2rem;
+  }
+  .not-found-page-home-link {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+}
+@media (max-width: 480px) {
+  .not-found-page-container {
+    padding: 30px 10px;
+  }
+  .not-found-page-title {
+    font-size: 4.5rem;
+  }
+  .not-found-page-message {
+    font-size: 1rem;
+    text-align: center;
+  }
+  .not-found-page-home-link {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+}
+@media (max-width: 320px) {
+  .not-found-page-container {
+    padding: 20px 5px;
+  }
+  .not-found-page-title {
+    font-size: 3.5rem;
+  }
+  .not-found-page-message {
+    font-size: 0.8rem;
+  }
+  .not-found-page-home-link {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+  }
+}
 .input {
   padding: 10px 0;
 }
