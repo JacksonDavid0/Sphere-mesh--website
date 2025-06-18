@@ -1,0 +1,111 @@
+.input {
+  padding: 10px 0;
+}
+.input .label {
+  display: block;
+  font-size: large;
+  font-weight: 600;
+  padding: 10px 0 10px 5px;
+}
+.input .inputTag {
+  width: 100%;
+  height: 44px;
+  font-weight: 700;
+  font-size: medium;
+  border-radius: 10px;
+  padding: 2% 0 2% 4%;
+  color: white;
+  border: 2px solid #505258;
+  background-color: #3a3f47;
+}
+.input .inputTag:focus {
+  outline: none;
+  box-shadow: 0 0 3px 2px #61dafb;
+}
+.input .inputTag::placeholder {
+  color: #a0a0a0;
+}
+.input .password {
+  display: flex;
+}
+.input .showPassword {
+  border: 0px;
+  width: 10%;
+  display: flex;
+  font-size: 19px;
+  margin-left: -10%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 10px 10px 0;
+  background-color: transparent;
+}
+.input input:-webkit-autofill,
+.input input:-webkit-autofill:focus,
+.input input:-webkit-autofill:hover,
+.input input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px #3a3f47 inset !important;
+  -webkit-text-fill-color: white !important;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .input {
+    padding: 15px 0px;
+  }
+  .input .label {
+    font-size: 24px;
+  }
+  .input .inputTag {
+    height: 54px;
+    font-size: 19px;
+  }
+}
+@media (max-width: 768px) {
+  .input {
+    padding: 15px 0px;
+  }
+  .input .label {
+    font-size: 24px;
+  }
+  .input .inputTag {
+    height: 57px;
+    font-size: 20px;
+  }
+  .input .showPassword {
+    font-size: 30px;
+    margin-left: -12%;
+  }
+}
+@media (max-width: 480px) {
+  .input {
+    padding: 15px 0px;
+  }
+  .input .label {
+    font-size: 24px;
+  }
+  .input .inputTag {
+    height: 57px;
+    font-size: 20px;
+  }
+  .input .showPassword {
+    font-size: 30px;
+    margin-left: -15%;
+  }
+}
+@media (max-width: 320px) {
+  .input {
+    padding: 15px 0px;
+  }
+  .input .label {
+    font-size: 24px;
+  }
+  .input .inputTag {
+    height: 57px;
+    font-size: 20px;
+  }
+  .input .showPassword {
+    font-size: 30px;
+    margin-left: -15%;
+  }
+}
+
+/*# sourceMappingURL=component.css.map */

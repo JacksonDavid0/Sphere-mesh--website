@@ -1,0 +1,10 @@
+@use "./variable" as *;
+@use "./login/login";
+@use "./component/component.scss";
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}

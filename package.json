@@ -7,13 +7,14 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "sass:watch": "sass --watch scss:css --style=expanded",
-    "sass:build": "sass --no-source-map scss:css --style=compress"
+    "sass:watch": "sass --watch src/scss:./public/css --style=expanded",
+    "sass:build": "sass --no-source-map src/scss:./public/css --style=compress"
   },
   "dependencies": {
     "next": "15.3.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-icons": "^5.5.0",
     "sass": "^1.89.2"
   },
   "devDependencies": {

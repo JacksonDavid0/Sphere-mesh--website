@@ -1,0 +1,116 @@
+@mixin responsive-login {
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .login-form-container {
+      width: 70%;
+      padding-top: 3%;
+
+      .title {
+        font-size: 42px;
+        font-weight: 700;
+      }
+
+      .login-form {
+        .forgotten-link,
+        .create-link {
+          font-size: 19px;
+        }
+        .submit-btn {
+          padding: 15px;
+          font-size: 20px;
+        }
+        .loading {
+          height: 30px;
+          width: 30px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .login-form-container {
+      width: 79%;
+      padding-top: 3%;
+
+      .title {
+        font-size: 42px;
+        font-weight: 700;
+      }
+
+      .login-form {
+        padding: 1% 12% 5%;
+        .forgotten-link,
+        .create-link {
+          font-size: 19px;
+        }
+        .submit-btn {
+          padding: 15px;
+          font-size: 20px;
+        }
+        .loading {
+          height: 30px;
+          width: 30px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .login-form-container {
+      width: 100%;
+      padding-top: 3%;
+      border-radius: 0;
+      border: 0;
+
+      .title {
+        font-size: 42px;
+        font-weight: 700;
+      }
+
+      .login-form {
+        padding: 1% 9% 5%;
+        .forgotten-link,
+        .create-link {
+          font-size: 19px;
+        }
+        .submit-btn {
+          padding: 15px;
+          font-size: 20px;
+        }
+        .loading {
+          height: 30px;
+          width: 30px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 320px) {
+    .login-form-container {
+      width: 100%;
+      padding-top: 20%;
+      border-radius: 0;
+      border: 0;
+
+      .title {
+        font-size: 42px;
+        font-weight: 700;
+      }
+
+      .login-form {
+        padding: 1% 1% 5%;
+        .forgotten-link,
+        .create-link {
+          font-size: 19px;
+        }
+        .submit-btn {
+          padding: 15px;
+          font-size: 20px;
+        }
+        .loading {
+          height: 30px;
+          width: 30px;
+        }
+      }
+    }
+  }
+}

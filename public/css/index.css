@@ -1,0 +1,313 @@
+.login {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+  background-color: #343d46;
+}
+
+.login-form-container {
+  width: 37%;
+  height: auto;
+  display: flex;
+  padding-top: 1.8%;
+  border-radius: 10px;
+  flex-direction: column;
+  color: white;
+  border: 3px solid #505258;
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.4705882353);
+  background-color: #282c34;
+}
+.login-form-container .title {
+  text-align: center;
+  font-size: xx-large;
+  font-weight: 600;
+}
+.login-form-container .login-form {
+  padding: 5% 12%;
+}
+.login-form-container .login-form .forgotten-link {
+  display: block;
+  text-align: left;
+  padding-bottom: 10px;
+  color: #61dafb;
+}
+.login-form-container .login-form .forgotten-link:hover {
+  text-decoration: underline;
+}
+.login-form-container .login-form .submit-btn {
+  width: 75%;
+  margin: 20px;
+  display: flex;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10px;
+  justify-self: center;
+  justify-content: center;
+  transition: 500ms ease-in;
+  color: white;
+  background-color: #61dafb;
+}
+.login-form-container .login-form .submit-btn:hover {
+  cursor: pointer;
+  color: #282c34;
+  transform: translateY(-1px);
+}
+.login-form-container .login-form .submit-btn:disabled {
+  cursor: not-allowed;
+  background-color: rgba(251, 251, 251, 0.7019607843);
+}
+.login-form-container .login-form .create-link {
+  display: block;
+  text-align: center;
+  padding-bottom: 10px;
+  color: #61dafb;
+}
+.login-form-container .login-form .create-link:hover {
+  text-decoration: underline;
+}
+.login-form-container .loading {
+  height: 24px;
+  width: 24px;
+  border: 4px solid white;
+  border-style: dotted;
+  border-radius: 50px;
+  animation: spin 1s infinite;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.login-form-container .error {
+  color: #ff3f3f;
+  text-align: center;
+  padding: 5px;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .login-form-container {
+    width: 70%;
+    padding-top: 3%;
+  }
+  .login-form-container .title {
+    font-size: 42px;
+    font-weight: 700;
+  }
+  .login-form-container .login-form .forgotten-link,
+  .login-form-container .login-form .create-link {
+    font-size: 19px;
+  }
+  .login-form-container .login-form .submit-btn {
+    padding: 15px;
+    font-size: 20px;
+  }
+  .login-form-container .login-form .loading {
+    height: 30px;
+    width: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .login-form-container {
+    width: 79%;
+    padding-top: 3%;
+  }
+  .login-form-container .title {
+    font-size: 42px;
+    font-weight: 700;
+  }
+  .login-form-container .login-form {
+    padding: 1% 12% 5%;
+  }
+  .login-form-container .login-form .forgotten-link,
+  .login-form-container .login-form .create-link {
+    font-size: 19px;
+  }
+  .login-form-container .login-form .submit-btn {
+    padding: 15px;
+    font-size: 20px;
+  }
+  .login-form-container .login-form .loading {
+    height: 30px;
+    width: 30px;
+  }
+}
+@media (max-width: 480px) {
+  .login-form-container {
+    width: 100%;
+    padding-top: 3%;
+    border-radius: 0;
+    border: 0;
+  }
+  .login-form-container .title {
+    font-size: 42px;
+    font-weight: 700;
+  }
+  .login-form-container .login-form {
+    padding: 1% 9% 5%;
+  }
+  .login-form-container .login-form .forgotten-link,
+  .login-form-container .login-form .create-link {
+    font-size: 19px;
+  }
+  .login-form-container .login-form .submit-btn {
+    padding: 15px;
+    font-size: 20px;
+  }
+  .login-form-container .login-form .loading {
+    height: 30px;
+    width: 30px;
+  }
+}
+@media (max-width: 320px) {
+  .login-form-container {
+    width: 100%;
+    padding-top: 20%;
+    border-radius: 0;
+    border: 0;
+  }
+  .login-form-container .title {
+    font-size: 42px;
+    font-weight: 700;
+  }
+  .login-form-container .login-form {
+    padding: 1% 1% 5%;
+  }
+  .login-form-container .login-form .forgotten-link,
+  .login-form-container .login-form .create-link {
+    font-size: 19px;
+  }
+  .login-form-container .login-form .submit-btn {
+    padding: 15px;
+    font-size: 20px;
+  }
+  .login-form-container .login-form .loading {
+    height: 30px;
+    width: 30px;
+  }
+}
+.input {
+  padding: 10px 0;
+}
+.input .label {
+  display: block;
+  font-size: large;
+  font-weight: 600;
+  padding: 10px 0 10px 5px;
+}
+.input .inputTag {
+  width: 100%;
+  height: 44px;
+  font-weight: 700;
+  font-size: medium;
+  border-radius: 10px;
+  padding: 2% 0 2% 4%;
+  color: white;
+  border: 2px solid #505258;
+  background-color: #3a3f47;
+}
+.input .inputTag:focus {
+  outline: none;
+  box-shadow: 0 0 3px 2px #61dafb;
+}
+.input .inputTag::placeholder {
+  color: #a0a0a0;
+}
+.input .password {
+  display: flex;
+}
+.input .showPassword {
+  border: 0px;
+  width: 10%;
+  display: flex;
+  font-size: 19px;
+  margin-left: -10%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 10px 10px 0;
+  background-color: transparent;
+}
+.input input:-webkit-autofill,
+.input input:-webkit-autofill:focus,
+.input input:-webkit-autofill:hover,
+.input input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px #3a3f47 inset !important;
+  -webkit-text-fill-color: white !important;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .input {
+    padding: 15px 0px;
+  }
+  .input .label {
+    font-size: 24px;
+  }
+  .input .inputTag {
+    height: 54px;
+    font-size: 19px;
+  }
+}
+@media (max-width: 768px) {
+  .input {
+    padding: 15px 0px;
+  }
+  .input .label {
+    font-size: 24px;
+  }
+  .input .inputTag {
+    height: 57px;
+    font-size: 20px;
+  }
+  .input .showPassword {
+    font-size: 30px;
+    margin-left: -12%;
+  }
+}
+@media (max-width: 480px) {
+  .input {
+    padding: 15px 0px;
+  }
+  .input .label {
+    font-size: 24px;
+  }
+  .input .inputTag {
+    height: 57px;
+    font-size: 20px;
+  }
+  .input .showPassword {
+    font-size: 30px;
+    margin-left: -15%;
+  }
+}
+@media (max-width: 320px) {
+  .input {
+    padding: 15px 0px;
+  }
+  .input .label {
+    font-size: 24px;
+  }
+  .input .inputTag {
+    height: 57px;
+    font-size: 20px;
+  }
+  .input .showPassword {
+    font-size: 30px;
+    margin-left: -15%;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=index.css.map */

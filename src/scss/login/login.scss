@@ -1,0 +1,100 @@
+@use "../variable" as *;
+@use "./login-mixin" as *;
+
+.login {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-family;
+  background-color: $primary-background-color;
+}
+
+.login-form-container {
+  width: 37%;
+  height: auto;
+  display: flex;
+  padding-top: 1.8%;
+  border-radius: 10px;
+  flex-direction: column;
+  color: $primary-text-color;
+  border: 3px solid $border-color;
+  box-shadow: 0px 10px 20px 0px #00000078;
+  background-color: $secondary-background-color;
+
+  .title {
+    text-align: center;
+    font-size: xx-large;
+    font-weight: 600;
+  }
+
+  .login-form {
+    padding: 5% 12%;
+    .forgotten-link {
+      display: block;
+      text-align: left;
+      padding-bottom: 10px;
+      color: $secondary-text-color;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    .submit-btn {
+      width: 75%;
+      margin: 20px;
+      display: flex;
+      padding: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      border-radius: 10px;
+      justify-self: center;
+      justify-content: center;
+      transition: 500ms ease-in;
+      color: $primary-text-color;
+      background-color: $secondary-text-color;
+      &:hover {
+        cursor: pointer;
+        color: $secondary-background-color;
+        transform: translateY(-1px);
+      }
+      &:disabled {
+        cursor: not-allowed;
+        background-color: #fbfbfbb3;
+      }
+    }
+    .create-link {
+      display: block;
+      text-align: center;
+      padding-bottom: 10px;
+      color: $secondary-text-color;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .loading {
+    height: 24px;
+    width: 24px;
+    border: 4px solid white;
+    border-style: dotted;
+    border-radius: 50px;
+    animation: spin 1s infinite;
+  }
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  .error {
+    color: #ff3f3f;
+    text-align: center;
+    padding: 5px;
+  }
+}
+
+@include responsive-login;

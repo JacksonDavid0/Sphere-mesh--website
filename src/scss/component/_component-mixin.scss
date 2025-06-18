@@ -1,0 +1,65 @@
+@mixin responsive-component {
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .input {
+      padding: 15px 0px;
+      .label {
+        font-size: 24px;
+      }
+      .inputTag {
+        height: 54px;
+        font-size: 19px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .input {
+      padding: 15px 0px;
+      .label {
+        font-size: 24px;
+      }
+      .inputTag {
+        height: 57px;
+        font-size: 20px;
+      }
+      .showPassword {
+        font-size: 30px;
+        margin-left: -12%;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .input {
+      padding: 15px 0px;
+      .label {
+        font-size: 24px;
+      }
+      .inputTag {
+        height: 57px;
+        font-size: 20px;
+      }
+      .showPassword {
+        font-size: 30px;
+        margin-left: -15%;
+      }
+    }
+  }
+
+  @media (max-width: 320px) {
+    .input {
+      padding: 15px 0px;
+      .label {
+        font-size: 24px;
+      }
+      .inputTag {
+        height: 57px;
+        font-size: 20px;
+      }
+      .showPassword {
+        font-size: 30px;
+        margin-left: -15%;
+      }
+    }
+  }
+}
