@@ -1,6 +1,7 @@
 @use "./variable" as *;
 @use "./login/login";
-@use "./not-found//not-found.scss";
+@use "./register/register.scss";
+@use "./not-found/not-found.scss";
 @use "./component/component.scss";
 * {
   margin: 0;
@@ -8,4 +9,5 @@
   border: 0;
   box-sizing: border-box;
   text-decoration: none;
+  font-family: $font-family;
 }

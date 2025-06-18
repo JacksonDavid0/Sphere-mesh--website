@@ -2,7 +2,7 @@
 @use "./component-mixin" as *;
 
 .input {
-  padding: 10px 0;
+  padding-bottom: 12px;
   .label {
     display: block;
     font-size: large;
@@ -25,6 +25,36 @@
     }
     &::placeholder {
       color: $placeholder-text-color;
+    }
+  }
+  #inputSelect {
+    height: 47.475px;
+    padding: 0 4%;
+    appearance: none;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .select-image-btn {
+    width: 100%;
+    height: 44px;
+    display: flex;
+    overflow: hidden;
+    font-weight: 700;
+    font-size: medium;
+    border-radius: 10px;
+    padding: 2% 0 2% 4%;
+    color: $primary-text-color;
+    border: 2px solid $border-color;
+    background-color: $input-background-color;
+    &:hover {
+      cursor: pointer;
+    }
+    .select-image {
+      width: 36px;
+      border-radius: 50px;
+      height: 36px;
+      margin-top: -10px;
     }
   }
   .password {

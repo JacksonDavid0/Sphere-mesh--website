@@ -3,24 +3,18 @@
 export async function login(state: any, forData: FormData) {
   const email = forData.get("email");
   const password = forData.get("password");
-  if (!email) {
+  if (!email || !password) {
     return {
       error: {
-        email: "Please fill the field",
-      },
-    };
-  } else if (!password) {
-    return {
-      error: {
-        password: "Please fill the field",
+        message: "Please fill all fields",
         value: forData.get("email"),
       },
     };
   }
 
   const data = {
-    email: forData.get("email"),
-    password: forData.get("password"),
+    email,
+    password,
   };
 
   try {
@@ -46,7 +40,12 @@ export async function login(state: any, forData: FormData) {
       return {
         success: false,
         error: {
-          email: result.error.message || "Login failed. Please try again.",
+          message:
+            result.error.details.length !== 0
+              ? result.error.details[0].message
+              : result.error.message
+              ? result.error.message
+              : "Login failed. Please try again.",
           value: forData.get("email"),
         },
       };
@@ -55,7 +54,7 @@ export async function login(state: any, forData: FormData) {
     return {
       success: false,
       error: {
-        email: "Please check your connection and try again.",
+        message: "Please check your connection and try again.",
         value: forData.get("email"),
       },
     };

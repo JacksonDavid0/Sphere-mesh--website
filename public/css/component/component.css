@@ -1,5 +1,5 @@
 .input {
-  padding: 10px 0;
+  padding-bottom: 12px;
 }
 .input .label {
   display: block;
@@ -24,6 +24,36 @@
 }
 .input .inputTag::placeholder {
   color: #a0a0a0;
+}
+.input #inputSelect {
+  height: 47.475px;
+  padding: 0 4%;
+  appearance: none;
+}
+.input #inputSelect:hover {
+  cursor: pointer;
+}
+.input .select-image-btn {
+  width: 100%;
+  height: 44px;
+  display: flex;
+  overflow: hidden;
+  font-weight: 700;
+  font-size: medium;
+  border-radius: 10px;
+  padding: 2% 0 2% 4%;
+  color: white;
+  border: 2px solid #505258;
+  background-color: #3a3f47;
+}
+.input .select-image-btn:hover {
+  cursor: pointer;
+}
+.input .select-image-btn .select-image {
+  width: 36px;
+  border-radius: 50px;
+  height: 36px;
+  margin-top: -10px;
 }
 .input .password {
   display: flex;

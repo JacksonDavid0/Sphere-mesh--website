@@ -7,7 +7,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: $font-family;
   background-color: $primary-background-color;
 }
 
@@ -64,7 +63,7 @@
         background-color: #fbfbfbb3;
       }
     }
-    .create-link {
+    .register-link {
       display: block;
       text-align: center;
       padding-bottom: 10px;

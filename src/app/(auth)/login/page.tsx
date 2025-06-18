@@ -1,7 +1,7 @@
 "use client";
 
 import Input from "@/components/input";
-import { login } from "@/utils/auth";
+import { login } from "@/utils/authLogin";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useActionState, useEffect } from "react";
@@ -25,13 +25,8 @@ export default function Login() {
             type="email"
             placeholder="Email..."
             name="email"
-            value={state?.error?.value || state?.error?.value}
+            value={state?.error?.value ? state?.error?.value : ""}
           />
-          {state?.error?.email ? (
-            <p className="error">{state.error.email}</p>
-          ) : (
-            ""
-          )}
           <Input
             label="Password"
             type="password"
@@ -39,18 +34,18 @@ export default function Login() {
             name="password"
             value={"password"}
           />
-          {state?.error?.password ? (
-            <p className="error">{state.error.password}</p>
-          ) : (
-            ""
-          )}
           <Link href={"/forget-password"} className="forgotten-link">
             Forgotten Password
           </Link>
+          {state?.error?.message ? (
+            <p className="error">{state.error.message}</p>
+          ) : (
+            ""
+          )}
           <button className="submit-btn" disabled={ispending}>
             {ispending ? <span className="loading"></span> : "Submit"}
           </button>
-          <Link href={"/register"} className="create-link">
+          <Link href={"/register"} className="register-link">
             Create an Account
           </Link>
         </form>
