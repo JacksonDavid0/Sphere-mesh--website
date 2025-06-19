@@ -25,14 +25,12 @@ export default function Login() {
             type="email"
             placeholder="Email..."
             name="email"
-            value={state?.error?.value ? state?.error?.value : ""}
           />
           <Input
             label="Password"
             type="password"
             placeholder="Password..."
             name="password"
-            value={"password"}
           />
           <Link href={"/forget-password"} className="forgotten-link">
             Forgotten Password

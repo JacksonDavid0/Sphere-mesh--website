@@ -2,15 +2,24 @@
 
 import Input from "@/components/input";
 import { register } from "@/utils/authRegister";
+import { IoArrowBackOutline } from "react-icons/io5";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { useActionState } from "react";
+import { useActionState, useEffect } from "react";
 
 export default function Register() {
+  const router = useRouter();
   const [state, action, isPending] = useActionState(register, {
     step: 1,
     error: undefined,
   });
-  console.log(state);
+
+  useEffect(() => {
+    if (state?.success === true) {
+      router.push("/");
+    }
+  }, [state?.success, router]);
+
   return (
     <div className="register">
       <div className="register-form-container">
@@ -52,6 +61,13 @@ export default function Register() {
             className="second-step"
             style={{ display: `${state?.step === 2 ? "block" : "none"}` }}
           >
+            {state?.step === 2 ? (
+              <button className="back-btn" name="button" value={"back"}>
+                <IoArrowBackOutline />
+              </button>
+            ) : (
+              ""
+            )}
             <Input label="Image" type="file" placeholder="file" name="file" />
 
             <Input
@@ -79,7 +95,20 @@ export default function Register() {
               Already have an account
             </Link>
 
-            <button className="submit-btn">Next</button>
+            <button
+              className="submit-btn"
+              name="button"
+              disabled={isPending ? true : false}
+              value={state?.step === 1 ? "next" : "register"}
+            >
+              {isPending ? (
+                <span className="loading"></span>
+              ) : state?.step === 1 ? (
+                "Next"
+              ) : (
+                "Register"
+              )}
+            </button>
           </div>
         </form>
       </div>

@@ -51,6 +51,30 @@
       background-color: #fbfbfbb3;
     }
   }
+
+  .back-btn {
+    width: 9%;
+    padding: 3px;
+    display: flex;
+    font-size: 25px;
+    margin: 10px 0 5px;
+    text-align: center;
+    border-radius: 10px;
+    transition: all 0.5s ease-in;
+    justify-content: center;
+    color: $primary-text-color;
+    background-color: $secondary-text-color;
+    &:hover {
+      cursor: pointer;
+      color: $secondary-background-color;
+      transform: translateY(-1px);
+    }
+    &:disabled {
+      cursor: not-allowed;
+      background-color: #fbfbfbb3;
+    }
+  }
+
   .login-link {
     display: block;
     text-align: center;
@@ -58,6 +82,22 @@
     color: $secondary-text-color;
     &:hover {
       text-decoration: underline;
+    }
+  }
+  .loading {
+    height: 24px;
+    width: 24px;
+    border: 4px solid white;
+    border-style: dotted;
+    border-radius: 50px;
+    animation: spin 1s infinite;
+  }
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
     }
   }
   .error {
