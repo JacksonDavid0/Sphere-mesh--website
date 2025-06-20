@@ -94,7 +94,7 @@ export async function register(state: any, forData: FormData) {
       formData.append("firstname", firstname);
       formData.append("lastname", lastname);
       formData.append("email", email);
-      formData.append("file", file);
+      formData.append("image", file);
       formData.append("gender", gender);
       formData.append("password", password);
 
@@ -104,14 +104,20 @@ export async function register(state: any, forData: FormData) {
         const response = await fetch(url, {
           method: "POST",
           credentials: "include",
-          body: formData,
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            gender,
+            password,
+          }),
         });
 
         if (!response.ok) {
           const result = await response.json();
-          console.log(false);
+          console.log(result.error.path);
           return {
-            step: 1,
+            step: 2,
             error: {
               messages:
                 result.error.details.length !== 0
@@ -123,22 +129,12 @@ export async function register(state: any, forData: FormData) {
           };
         }
 
+        console.log(formData);
+
         url = "http://localhost:3060/api/v1/user/register";
         const newResponse = await fetch(url, {
           method: "POST",
-          credentials: "include",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            username,
-            firstname,
-            lastname,
-            email,
-            file,
-            gender,
-            password,
-          }),
+          body: formData,
         });
 
         if (!newResponse.ok) {

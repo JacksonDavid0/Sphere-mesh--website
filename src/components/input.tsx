@@ -39,7 +39,7 @@ export default function Input({
       </div>
     );
   } else if (type === "select") {
-    const [newValue, setValue] = useState<string | undefined>();
+    const [newValue, setValue] = useState<string>("select");
     return (
       <div className="input" style={{ width: `${width ? width : "100%"}` }}>
         <label className="label">{label}</label>
@@ -65,18 +65,18 @@ export default function Input({
   } else if (type === "file") {
     const [filename, setFilename] = useState<any>("Choose file...");
     const [fileurl, setFileurl] = useState<any>();
-    const [newValue, setValue] = useState<string | undefined>();
+    const [files, setFiles] = useState<any>();
     const fileInputRef = useRef<HTMLInputElement>(null);
     function handleBtn() {
       fileInputRef.current?.click();
     }
     function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
       const file = e.target.files?.[0];
+      setFiles(file);
       if (!file) return;
       const url = URL.createObjectURL(file);
       setFileurl(url);
       setFilename(file?.name);
-      console.log(file);
     }
 
     return (
@@ -87,7 +87,6 @@ export default function Input({
           name={name}
           accept="image/*"
           className="inputTag"
-          value={newValue}
           ref={fileInputRef}
           onChange={handleChange}
           style={{ display: "none" }}
