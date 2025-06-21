@@ -25,7 +25,7 @@
   }
 
   .register-form {
-    padding: 0 12%;
+    padding: 0 12% 12px;
   }
   .submit-btn {
     width: 45%;
@@ -34,7 +34,7 @@
     font-size: 18px;
     font-weight: bold;
     margin: 10px 0 5px;
-    text-align: center;
+    align-items: center;
     border-radius: 10px;
     justify-self: center;
     justify-content: center;
@@ -59,6 +59,7 @@
     font-size: 25px;
     margin: 10px 0 5px;
     text-align: center;
+    place-items: center;
     border-radius: 10px;
     transition: all 0.5s ease-in;
     justify-content: center;
@@ -84,6 +85,20 @@
       text-decoration: underline;
     }
   }
+
+  .activation-link {
+    display: block;
+    text-align: center;
+    font-size: 15px;
+    margin: 20px 0px;
+    color: #30ff30;
+    font-weight: 700;
+    p {
+      font-weight: normal;
+      color: $primary-text-color;
+    }
+  }
+
   .loading {
     height: 24px;
     width: 24px;

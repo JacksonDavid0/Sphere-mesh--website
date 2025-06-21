@@ -6,6 +6,7 @@ interface inputProps {
   type: string;
   name: string;
   width?: string;
+  onClick?: () => void;
   placeholder?: string;
 }
 
@@ -14,6 +15,7 @@ export default function Input({
   type,
   name,
   width,
+  onClick,
   placeholder,
 }: inputProps) {
   if (type === "password") {
@@ -31,6 +33,7 @@ export default function Input({
             placeholder={placeholder}
             className="inputTag"
             autoComplete="current-password"
+            onClick={onClick ? onClick : undefined}
           />
           <span className="showPassword" onClick={togglePassword}>
             {showPassword ? <FaEyeSlash /> : <FaEye />}
@@ -51,6 +54,7 @@ export default function Input({
           onChange={(e) => {
             setValue(e.target.value);
           }}
+          onClick={onClick ? onClick : undefined}
         >
           <option value="select" disabled hidden>
             Select...
@@ -63,17 +67,17 @@ export default function Input({
       </div>
     );
   } else if (type === "file") {
-    const [filename, setFilename] = useState<any>("Choose file...");
+    let [filename, setFilename] = useState<any>("Choose file...");
     const [fileurl, setFileurl] = useState<any>();
-    const [files, setFiles] = useState<any>();
+    const [filesValue, setFilesValue] = useState<any>();
     const fileInputRef = useRef<HTMLInputElement>(null);
     function handleBtn() {
       fileInputRef.current?.click();
     }
     function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
       const file = e.target.files?.[0];
-      setFiles(file);
       if (!file) return;
+      setFilesValue(file);
       const url = URL.createObjectURL(file);
       setFileurl(url);
       setFilename(file?.name);
@@ -90,6 +94,7 @@ export default function Input({
           ref={fileInputRef}
           onChange={handleChange}
           style={{ display: "none" }}
+          onClick={onClick ? onClick : undefined}
         />
         <div className="select-image-btn" onClick={handleBtn}>
           {typeof fileurl === "string" ? (
@@ -114,6 +119,7 @@ export default function Input({
           className="inputTag"
           defaultValue={newValue}
           onChange={(e) => setValue(e.target.value)}
+          onClick={onClick ? onClick : undefined}
           autoComplete={
             name === "email" ? "email" : name === "username" ? "username" : ""
           }

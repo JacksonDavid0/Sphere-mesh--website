@@ -28,15 +28,14 @@ export async function login(state: any, forData: FormData) {
       body: JSON.stringify(data),
     });
 
-    const result = await response.json();
-
     if (response.ok) {
       await new Promise((resolve) => setTimeout(resolve, 1500));
-      console.log(result);
+      // console.log(result);
       return {
         success: true,
       };
     } else {
+      const result = await response.json();
       return {
         success: false,
         error: {
@@ -46,7 +45,6 @@ export async function login(state: any, forData: FormData) {
               : result.error.message
               ? result.error.message
               : "Login failed. Please try again.",
-          value: forData.get("email"),
         },
       };
     }

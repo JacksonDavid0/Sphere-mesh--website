@@ -11,7 +11,7 @@ export async function register(state: any, forData: FormData) {
   let comfirmPasswod = forData.get("confirmPassword")?.toString();
   const button = forData.get("button")?.toString();
 
-  if (state.step === 1 && button === "next") {
+  if (state?.step === 1 && button === "next") {
     if (!username || !firstname || !lastname || !email) {
       return {
         step: 1,
@@ -64,7 +64,7 @@ export async function register(state: any, forData: FormData) {
       }
   }
 
-  if (state.step === 2 && button === "register") {
+  if (state?.step === 2 && button === "register") {
     if (!file || !gender || !password || !comfirmPasswod) {
       return {
         step: 2,
@@ -114,7 +114,7 @@ export async function register(state: any, forData: FormData) {
         });
 
         if (!response.ok) {
-          const result = await response.json();
+          const result = await response?.json();
           console.log(result.error.path);
           return {
             step: 2,
@@ -129,16 +129,14 @@ export async function register(state: any, forData: FormData) {
           };
         }
 
-        console.log(formData);
-
         url = "http://localhost:3060/api/v1/user/register";
         const newResponse = await fetch(url, {
           method: "POST",
           body: formData,
         });
 
+        const result = await newResponse?.json();
         if (!newResponse.ok) {
-          const result = await newResponse.json();
           return {
             step: 2,
             error: {
@@ -151,8 +149,13 @@ export async function register(state: any, forData: FormData) {
             },
           };
         }
+
+        await new Promise((resolve) => setTimeout(resolve, 1000));
         return {
-          success: true,
+          step: 3,
+          success: {
+            messages: result.message,
+          },
         };
       } catch (error) {
         return {
@@ -165,7 +168,11 @@ export async function register(state: any, forData: FormData) {
     }
   }
 
-  if (state.step === 2 && button === "back") {
+  if (state?.step === 3) {
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+  }
+
+  if (state?.step === 2 && button === "back") {
     return { step: 1 };
   }
 }
